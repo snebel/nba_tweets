@@ -161,7 +161,7 @@ DEPENDENCIES
   rails
   sass-rails
   simplecov
-  sqlite3 (= 1.3.8)
+  sqlite3
   twitter
   uglifier
   webmock

@@ -8,11 +8,16 @@ gem 'haml'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
+gem 'sqlite3'
 
 gem 'activerecord-session_store'
 
 group :development do
-  gem 'sqlite3', '1.3.8'
+  gem 'sqlite3'
+end
+
+group :test, :production do
+  #gem 'pg', '0.12.2'
 end
 
 group :assets do

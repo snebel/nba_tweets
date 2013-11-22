@@ -23,7 +23,7 @@ class Twitter
 
   def get_tweets(person)
   	baseurl = "https://api.twitter.com/1.1/statuses/user_timeline.json?"
-	path = "screen_name=#{person.handle}&count=3&include_rts=1&exclude_replies=true"
+	path = "screen_name=#{person}&count=3&include_rts=1&exclude_replies=true"
 
 	response = connect(baseurl, path)
 	show_tweets(response.body)
@@ -33,11 +33,16 @@ class Twitter
   	tweets = JSON.parse(response)
 	puts
 	tweets.each do |tweet|
-	  puts tweet["user"]["name"]
-	  puts tweet["created_at"]
-	  puts tweet["text"]
-	  puts "media: #{tweet["entities"]["urls"][0]}"
-	  puts 
+	  tweet["user"]["name"] + "\n" +
+	  tweet["created_at"] + "\n" +
+	  tweet["text"] + "\n" +
+	  "media: #{tweet["entities"]["urls"][0]}" 
+	end
+  end
+
+  def display_tweets(players)
+ 	players.each do |player|
+	  get_tweets(player)
 	end
   end
 
