@@ -1,7 +1,7 @@
 require 'oauth'
 require 'json'
 
-class Twitter
+class Twitter < ActiveRecord::Base
   def initialize
     @consumer_key = OAuth::Consumer.new(
     	"3Ft58U1DWj5Rzy31mZ7hQ",
@@ -17,33 +17,45 @@ class Twitter
 	http          = Net::HTTP.new address.host, address.port
 	http.use_ssl  = true
 	request.oauth! http, @consumer_key, @access_token
+	#request.oauth! 
 	http.start
 	response = http.request request
   end
 
   def get_tweets(person)
   	baseurl = "https://api.twitter.com/1.1/statuses/user_timeline.json?"
-	path = "screen_name=#{person}&count=3&include_rts=1&exclude_replies=true"
+	path = "screen_name="+"person"+"&count=3&include_rts=1&exclude_replies=true"
 
 	response = connect(baseurl, path)
-	show_tweets(response.body)
+	tweets = JSON.parse(response.body)
+
+	ids = []
+	tweets.each do |tweet|
+	  ids << tweet["id"]	
+	end
+	return ids
+	#show_tweets(response.body)
   end
 
-  def show_tweets(response)
-  	tweets = JSON.parse(response)
-	puts
-	tweets.each do |tweet|
-	  tweet["user"]["name"] + "\n" +
-	  tweet["created_at"] + "\n" +
-	  tweet["text"] + "\n" +
-	  "media: #{tweet["entities"]["urls"][0]}" 
-	end
-  end
 
   def display_tweets(players)
+  	team_tweets = []
  	players.each do |player|
-	  get_tweets(player)
+	  team_tweets << get_tweets(player)
 	end
+	return show_tweets(team_tweets)
+  end
+
+  def show_tweets(team_tweets)
+  	htmls = []
+  	team_tweets.each do |player|
+  	  player.each do |id|
+  	  	resp = connect("https://api.twitter.com/1/statuses/oembed.json?id="+"id", "")
+  	  	tweet = JSON.parse(resp.body)
+  	  	htmls << tweet["url"]
+  	  end
+  	end
+  	return htmls
   end
 
 end

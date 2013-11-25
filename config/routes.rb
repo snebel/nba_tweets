@@ -1,9 +1,8 @@
 NbaTweets::Application.routes.draw do
-  root 'welcome#index'
+  root 'teams#index'
   resources :sessions
-  resources :welcome
+  resources :teams
   get "sessions/show"
-  get "welcome/index"
   get '/auth/twitter/callback', to: 'sessions#create', as: 'callback'
   get '/auth/failure', to: 'sessions#error', as: 'failure'
   get '/list', to: 'sessions#show', as: 'show'

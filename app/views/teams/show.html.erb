@@ -1,0 +1,6 @@
+
+
+<% tweets = display_tweets(@team.handles) %>
+<% tweets.each do |tweet| %></br>
+  <%= tweet.html_safe %>
+<% end %>

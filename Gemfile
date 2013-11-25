@@ -9,6 +9,9 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'sqlite3'
+gem 'json'
+gem 'oauth'
+
 
 gem 'activerecord-session_store'
 

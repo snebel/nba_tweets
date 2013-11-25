@@ -1,0 +1,10 @@
+
+<%= form_for @team do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Team name" %>
+
+  <%= f.label :handles %>
+  <%= f.text_field :handles, placeholder: "List player Twitter handles separated by a space" %>
+
+  <%= f.submit "Create Team" %>
+<% end %>
