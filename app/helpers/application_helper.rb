@@ -17,8 +17,8 @@ module ApplicationHelper
   def get_tweet_html(id)
   	address = URI("https://api.twitter.com/1/statuses/oembed.json?id=#{id}&align=center&maxwidth=500")
 	request = Net::HTTP::Get.new address.request_uri
-	http          = Net::HTTP.new address.host, address.port
-	http.use_ssl  = true
+	http = Net::HTTP.new address.host, address.port
+	http.use_ssl = true
 	http.start
 	resp = http.request request
 	JSON.parse(resp.body)["html"]
@@ -40,11 +40,11 @@ module ApplicationHelper
 
 
   def display_tweets(players)
-  	team_tweets = []
+  	tweet_ids = []
  	players.each do |player|
-	  team_tweets << get_tweet_ids(player)
+	  tweet_ids << get_tweet_ids(player)
 	end
-	return show_tweets(team_tweets)
+	return show_tweets(tweet_ids)
   end
 
   def show_tweets(team_tweets)
