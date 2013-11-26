@@ -1,3 +1,5 @@
+OmniAuth.config.logger = Rails.logger 
+
 Rails.application.config.middleware.use OmniAuth::Builder do
   if ENV['CONSUMER_KEY'].blank? || ENV['CONSUMER_SECRET'].blank?
     warn "*" * 80
@@ -6,6 +8,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     warn "with the command: CONSUMER_KEY=abc CONSUMER_SECRET=123 rails server"
     warn "*" * 80
   else
-    provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
+    provider :twitter, 'CONSUMER_KEY', 'CONSUMER_SECRET'
+    #ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
   end
 end
