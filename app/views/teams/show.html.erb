@@ -1,6 +1,12 @@
+<head>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
 
+<body>
 
-<% tweets = display_tweets(@team.handles) %>
-<% tweets.each do |tweet| %></br>
-  <%= tweet.html_safe %>
-<% end %>
+  <% tweets = display_tweets(@team.handles) %>
+  <% tweets.each do |tweet| %>
+    <%= tweet.html_safe %>
+  <% end %>
+
+</body>
