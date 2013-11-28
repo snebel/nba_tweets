@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-  	@team = Team.find(params[:id])
+  	@team = Team.find_by_name(params[:id])
     #@twitter = Twitter.new
   end
 

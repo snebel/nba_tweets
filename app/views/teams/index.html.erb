@@ -1,7 +1,81 @@
-<h1>Welcome to NBA Tweets</h1>
+<head>
 
+</head>
+<div class="container">
+<body>
 
-<% Team.all.each do |team| %>
-  <%= link_to team.name, team %>
-</br>
-<% end %>
+  <header>
+    <div class="page-header">
+      <h1>NBA Tweets <small>recent tweets by every NBA player, sorted by team</small></h1>
+    </div>
+  </header>
+
+  <table class="table table-condensed">
+    <tr>
+      <td width="33.33%">
+        <div class="list-group">
+          <a href="#" class="list-group-item active text-center"><strong>Atlantic</strong></a>
+          <a href="/Knicks" class="list-group-item">Knicks</a>
+          <a href="#" class="list-group-item">Nets</a>
+          <a href="#" class="list-group-item">Celtics</a>
+          <a href="#" class="list-group-item">Sixers</a>
+          <a href="#" class="list-group-item">Raptors</a>
+        </div>
+      </td>
+      <td width="33.33%">
+        <div class="list-group">
+          <a href="#" class="list-group-item active text-center"><strong>Central</strong></a>
+          <a href="/Knicks" class="list-group-item">Pacers</a>
+          <a href="#" class="list-group-item">Bulls</a>
+          <a href="#" class="list-group-item">Pistons</a>
+          <a href="#" class="list-group-item">Cavaliers</a>
+          <a href="#" class="list-group-item">Bucks</a>
+        </div>
+      </td width="33.33%">
+      <td>
+        <div class="list-group">
+          <a href="#" class="list-group-item active text-center"><strong>Southeast</strong></a>
+          <a href="/Knicks" class="list-group-item">Heat</a>
+          <a href="#" class="list-group-item">Hawks</a>
+          <a href="#" class="list-group-item">Wizards</a>
+          <a href="#" class="list-group-item">Magic</a>
+          <a href="#" class="list-group-item">Bobcats</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="list-group">
+          <a class="list-group-item active west text-center"><strong>Northwest</strong></a>
+          <a href="/Knicks" class="list-group-item">Thunder</a>
+          <a href="#" class="list-group-item">Nuggets</a>
+          <a href="#" class="list-group-item">Blazers</a>
+          <a href="#" class="list-group-item">Wolves</a>
+          <a href="#" class="list-group-item">Jazz</a>
+        </div>
+      </td>
+      <td>
+        <div class="list-group">
+          <a href="#" class="list-group-item active west text-center"><strong>Pacific</strong></a>
+          <a href="/Knicks" class="list-group-item">Clippers</a>
+          <a href="#" class="list-group-item">Lakers</a>
+          <a href="#" class="list-group-item">Warriors</a>
+          <a href="#" class="list-group-item">Kings</a>
+          <a href="#" class="list-group-item">Suns</a>
+        </div>
+      </td>
+      <td>
+        <div class="list-group">
+          <a href="#" class="list-group-item active west text-center"><strong>Southwest</strong></a>
+          <a href="/Knicks" class="list-group-item">Rockets</a>
+          <a href="#" class="list-group-item">Mavericks</a>
+          <a href="#" class="list-group-item">Spurs</a>
+          <a href="#" class="list-group-item">Grizzlies</a>
+          <a href="#" class="list-group-item">Pelicans</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</div>

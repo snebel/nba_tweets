@@ -24,18 +24,18 @@ module ApplicationHelper
 
   def get_tweets(player)
   	baseurl = "https://api.twitter.com/1.1/statuses/user_timeline.json?"
-	path = "screen_name=#{player}&count=5&include_rts=false&exclude_replies=true"
+	path = "screen_name=#{player}&count=4&include_rts=false&exclude_replies=true"
 
 	response = connect(baseurl, path)
 	tweets = JSON.parse(response.body)
 	
 	recent_tweets = []
 	tweets.each do |tweet|
-	  if DateTime.parse(tweet["created_at"]) + 3 > DateTime.now
+	  if DateTime.parse(tweet["created_at"]) + 3 >= DateTime.now
 	    recent_tweets << tweet
 	  end
 	end
-	#return recent_tweets
+	return recent_tweets
   end
 
   def display_tweets(players)

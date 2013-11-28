@@ -4,6 +4,7 @@ ruby '2.0.0'
 gem 'activesupport'
 gem 'rails'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass-rails'
 gem 'haml'
 gem 'omniauth'
 gem 'omniauth-twitter'
@@ -11,10 +12,9 @@ gem 'twitter'
 gem 'sqlite3'
 gem 'json'
 gem 'oauth'
-
-
-
 gem 'activerecord-session_store'
+gem 'jquery-rails'
+
 
 group :development do
   gem 'sqlite3'

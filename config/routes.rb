@@ -1,12 +1,13 @@
 NbaTweets::Application.routes.draw do
   root 'teams#index'
   resources :sessions
-  resources :teams
-  get "sessions/show"
+  resources :teams, :path => ''
+
+  #get "sessions/show"
   get '/signin' => 'sessions#new', :as => :signin
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
-  get '/list', to: 'sessions#show', as: 'show'
+  #get '/list', to: 'sessions#show', as: 'show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
