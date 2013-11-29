@@ -1,14 +1,12 @@
 <head>
-
+  <style>
+    body { padding-top: 100px; }
+  </style>
 </head>
 <div class="container">
 <body>
 
-  <header>
-    <div class="page-header">
-      <h1>NBA Tweets <small>recent tweets by every NBA player, sorted by team</small></h1>
-    </div>
-  </header>
+  <%= render 'shared/header' %>
 
   <table class="table table-condensed">
     <tr>
@@ -16,7 +14,7 @@
         <div class="list-group">
           <a href="#" class="list-group-item active text-center"><strong>Atlantic</strong></a>
           <a href="/Knicks" class="list-group-item">Knicks</a>
-          <a href="#" class="list-group-item">Nets</a>
+          <a href="/Nets" class="list-group-item">Nets</a>
           <a href="#" class="list-group-item">Celtics</a>
           <a href="#" class="list-group-item">Sixers</a>
           <a href="#" class="list-group-item">Raptors</a>
@@ -25,7 +23,7 @@
       <td width="33.33%">
         <div class="list-group">
           <a href="#" class="list-group-item active text-center"><strong>Central</strong></a>
-          <a href="/Knicks" class="list-group-item">Pacers</a>
+          <a href=""class="list-group-item">Pacers</a>
           <a href="#" class="list-group-item">Bulls</a>
           <a href="#" class="list-group-item">Pistons</a>
           <a href="#" class="list-group-item">Cavaliers</a>
@@ -48,7 +46,7 @@
       <td>
         <div class="list-group">
           <a class="list-group-item active west text-center"><strong>Northwest</strong></a>
-          <a href="/Knicks" class="list-group-item">Thunder</a>
+          <a href="" class="list-group-item">Thunder</a>
           <a href="#" class="list-group-item">Nuggets</a>
           <a href="#" class="list-group-item">Blazers</a>
           <a href="#" class="list-group-item">Wolves</a>
@@ -68,7 +66,7 @@
       <td>
         <div class="list-group">
           <a href="#" class="list-group-item active west text-center"><strong>Southwest</strong></a>
-          <a href="/Knicks" class="list-group-item">Rockets</a>
+          <a href="/Rockets" class="list-group-item">Rockets</a>
           <a href="#" class="list-group-item">Mavericks</a>
           <a href="#" class="list-group-item">Spurs</a>
           <a href="#" class="list-group-item">Grizzlies</a>

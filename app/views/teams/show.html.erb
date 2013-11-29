@@ -1,8 +1,12 @@
 <head>
+  <style>
+    body { padding-top: 100px; }
+  </style>
   <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
+  <%= render 'shared/header' %>
 
   <% tweets = display_tweets(@team.handles) %>
   <% tweets.each do |tweet| %>
